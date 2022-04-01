@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Technical Documentation Page (SQL)</title>
+  <link rel="stylesheet" href="./style.css">
 
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav id="navbar">
+       <header id="header">
+    
+  
+  </header>
+  
+  <ul>
+ <li> <a class="nav-link" href="#SQL_Adding">SQL Adding</a></li>
+ <li> <a class="nav-link" href="#SQL_deleting">SQL Deleting</a></li>
+ <li> <a class="nav-link" href="#SQL_updating">SQL Updating</a></li>
+ <li> <a class="nav-link" href="#SQL_sorting">SQL Sorting</a></li>
+ <li> <a class="nav-link" href="#SQL_Joining">SQL Joining</a></li>
+    </ul>
+
+  </nav>
+<h1>
+  <u>Basic SQL commands and Examples</u>
+    </h1>
+    <main id="main-doc">
+    <h2>
+     <section class="main-section" id="SQL_Adding">
+       <header>
+         SQL Adding
+       </header>
+       <p>
+         In order to add data into an SQL database table, you would use the <code>INSERT INTO</code> command.
+       </p>
+       
+       <li id="codebullet">
+         <code>INSERT INTO Enrollments (FName, LName, Sex) VALUES (Jason, Bourne, Male)</code>
+       </li>
+       <br></br>
+       <p>
+         This command would allow you to insert new information into an existing table by specifying the values and where they go. In this case, we would have added a new male student to the table, Jason Bourne.
+       </p>
+     </section>
+     <section class="main-section" id="SQL_deleting">
+       <header>
+         SQL Deleting
+       </header>
+       <p>
+         In order to delete the data from an SQL database table, you would use the <code>DELETE</code> command.
+       </p>
+       <li id="codebullet">
+         <code>DELETE FROM Enrollments WHERE FName='Jason';</code>
+       </li>
+       <br></br>
+       <p>
+         This command would allow you to delete existing information from an existing table by telling SQL what you want deleted from the table, and where this applies. In this case, we would have deleted all entries from Enrollment where the first name is equal to Jason. 
+       </p>
+     </section>
+     <section class="main-section" id="SQL_updating">
+       <header>
+         SQL Updating
+       </header>
+       <p>
+         In order to update the data from an SQL database table, you would use the <code>UPDATE</code> command.
+       </p>
+       <li id="codebullet">
+         <code>UPDATE Enrollments SET FName = 'Johnny' WHERE FName='Jason';</code>
+       </li>
+       <br></br>
+       <p>
+         This command would allow you to update information in an existing table by what value to set, and where. In this case, we would have changed all the first names of students named Jason, to Johnny.
+       </p>
+     </section>
+     <section class="main-section" id="SQL_sorting">
+       <header>
+         SQL Sorting
+       </header>
+       <p>
+         In order to sort the data you receive from SQL, you would use the <code>ORDER BY</code> command.
+       </p>
+       <li id="codebullet">
+         <code>SELECT FName, LName FROM Enrollments ORDER BY FName, LName</code>
+       </li>
+       <br></br>
+       <p>
+         This command would allow you to select information from an existing table by specifying what values you want, and in what order they're displayed. In this case, we would have gotten the first and last names of everyone in the table, and ordered them by their first names, then last names. 
+       </p>
+     </section>
+     <section class="main-section" id="SQL_Joining">
+       <header>
+         SQL Joining
+       </header>
+       <p>
+         In order to join the data from 2 SQL database tables, you would use the <code>JOIN</code> command.
+       </p>
+       <li id="codebullet">
+         <code>
+           SELECT Enrollments.FName, Enrollments.LName FROM Enrollments JOIN Applications ON Enrollments.FName=Applications.FName;
+         </code>
+       </li>
+       <br></br>
+       <p>
+         This command would allow you to join two different tables together based off a shared column. In this case, we tell SQL that we want it to select the first name and last name from the enrollments table, BUT we want it to join (include) the table "Applications" on the basis that they share a FName column. This will return all unique FName and LName values from both tables!
+       </p>
+     </section>
+    </h2>
+  
+</main>
+<!-- partial -->
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+</body>
+</html>
